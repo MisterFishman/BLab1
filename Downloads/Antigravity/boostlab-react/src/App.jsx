@@ -90,13 +90,13 @@ function App() {
 
   // Данные отчётов
   const reports = [
-    { id: 1, name: 'Отчёт №1', date: '10.10.2025', status: 'Обновлено', color: 'green' },
-    { id: 2, name: 'Отчёт №2', date: '10.10.2025', status: 'Обновлено', color: 'green' },
-    { id: 3, name: 'Отчёт №3', date: '10.10.2025', status: 'В очереди', color: 'yellow' },
-    { id: 4, name: 'Отчёт №4', date: '10.10.2025', status: 'В очереди', color: 'yellow' },
-    { id: 5, name: 'Отчёт №5', date: '10.10.2025', status: 'Обновлено', color: 'green' },
-    { id: 6, name: 'Отчёт №6', date: '10.10.2025', status: 'Обновлено', color: 'green' },
-    { id: 7, name: 'Отчёт №7', date: '10.10.2025', status: 'Ошибка', color: 'red' }
+    { id: 1, name: 'Отчёт №1', date: '10.10.2025' updatedDate: 'Завтра',, status: 'Обновлено', color: 'green' },
+    { id: 2, name: 'Отчёт №2', date: '10.10.2025', updatedDate: 'Завтра', status: 'Обновлено', color: 'green' },
+    { id: 3, name: 'Отчёт №3', date: '10.10.2025 updatedDate: 'Сегодня',', status: 'В очереди', color: 'yellow' },
+    { id: 4, name: 'Отчёт №4', date: '10.10.2025 updatedDate: 'Сегодня',', status: 'В очереди', color: 'yellow' },
+    { id: 5, name: 'Отчёт №5', date: '10.10.2025 updatedDate: 'Завтра',', status: 'Обновлено', color: 'green' },
+    { id: 6, name: 'Отчёт №6', date: '10.10.2025 updatedDate: 'Завтра',', status: 'Обновлено', color: 'green' },
+    { id: 7, name: 'Отчёт №7', date: '10.10.2025 updatedDate: 'Сегодня',', status: 'Ошибка', color: 'red' }
   ];
 
   return (
@@ -345,12 +345,11 @@ function App() {
           {/* Reports Table */}
           <Paper shadow="xs" style={{ overflow: 'hidden', border: '1px solid #dee2e6' }}>
             <div style={{ padding: '20px 20px 16px 20px' }}>
-              <Text size="xl" fw={700}>Последние отчёты</Text>
             </div>
             <Table>
               <Table.Thead style={{ backgroundColor: '#f8f9fa' }}>
                 <Table.Tr>
-                  <Table.Th style={{ padding: '16px 20px', fontSize: '12px', color: '#868e96', textTransform: 'uppercase', fontWeight: 600, textAlign: 'center' }}>Название отчёта</Table.Th>
+                  <Table.Th style={{ padding: '16px 20px', fontSize: '12px', color: '#868e96', textTransform: 'uppercase', fontWeight: 600, textAlign: 'left', paddingLeft: '30px' }}>Название отчёта</Table.Th>
                   <Table.Th style={{ padding: '16px 20px', fontSize: '12px', color: '#868e96', textTransform: 'uppercase', fontWeight: 600, textAlign: 'center' }}>Дата создания</Table.Th>
                   <Table.Th style={{ padding: '16px 20px', fontSize: '12px', color: '#868e96', textTransform: 'uppercase', fontWeight: 600, textAlign: 'center' }}>Дата обновления</Table.Th>
                   <Table.Th style={{ padding: '16px 20px', fontSize: '12px', color: '#868e96', textTransform: 'uppercase', fontWeight: 600, textAlign: 'center' }}>Статус</Table.Th>
@@ -365,13 +364,13 @@ function App() {
                       borderBottom: index === reports.length - 1 ? 'none' : '1px solid #f1f3f5'
                     }}
                   >
-                    <Table.Td style={{ padding: '16px 20px', fontSize: '15px', textAlign: 'center' }}>{report.name}</Table.Td>
+                    <Table.Td style={{ padding: '16px 20px', fontSize: '15px', textAlign: 'left', paddingLeft: '30px', textAlign: 'center' }}>{report.name}</Table.Td>
                     <Table.Td style={{ padding: '16px 20px', fontSize: '15px', textAlign: 'center' }}>{report.date}</Table.Td>
                     <Table.Td style={{ padding: '16px 20px', fontSize: '15px', textAlign: 'center' }}>{report.date}</Table.Td>
                     <Table.Td style={{ padding: '16px 20px', textAlign: 'center' }}>
                       <Badge 
                         style={{ 
-                          padding: '6px 14px', 
+                          padding: '10px 20px',
                           borderRadius: '16px',
                           fontSize: '13px',
                           fontWeight: 500,
