@@ -90,15 +90,14 @@ function App() {
 
   // Данные отчётов
   const reports = [
-    { id: 1, name: 'Отчёт №1', date: '10.10.2025' updatedDate: 'Завтра',, status: 'Обновлено', color: 'green' },
+    { id: 1, name: 'Отчёт №1', date: '10.10.2025', updatedDate: 'Завтра', status: 'Обновлено', color: 'green' },
     { id: 2, name: 'Отчёт №2', date: '10.10.2025', updatedDate: 'Завтра', status: 'Обновлено', color: 'green' },
-    { id: 3, name: 'Отчёт №3', date: '10.10.2025 updatedDate: 'Сегодня',', status: 'В очереди', color: 'yellow' },
-    { id: 4, name: 'Отчёт №4', date: '10.10.2025 updatedDate: 'Сегодня',', status: 'В очереди', color: 'yellow' },
-    { id: 5, name: 'Отчёт №5', date: '10.10.2025 updatedDate: 'Завтра',', status: 'Обновлено', color: 'green' },
-    { id: 6, name: 'Отчёт №6', date: '10.10.2025 updatedDate: 'Завтра',', status: 'Обновлено', color: 'green' },
-    { id: 7, name: 'Отчёт №7', date: '10.10.2025 updatedDate: 'Сегодня',', status: 'Ошибка', color: 'red' }
+    { id: 3, name: 'Отчёт №3', date: '10.10.2025', updatedDate: 'Сегодня', status: 'В очереди', color: 'blue' },
+    { id: 4, name: 'Отчёт №4', date: '10.10.2025', updatedDate: 'Сегодня', status: 'В очереди', color: 'blue' },
+    { id: 5, name: 'Отчёт №5', date: '10.10.2025', updatedDate: 'Завтра', status: 'Обновлено', color: 'green' },
+    { id: 6, name: 'Отчёт №6', date: '10.10.2025', updatedDate: 'Завтра', status: 'Обновлено', color: 'green' },
+    { id: 7, name: 'Отчёт №7', date: '10.10.2025', updatedDate: 'Сегодня', status: 'Ошибка', color: 'red' },
   ];
-
   return (
     <MantineProvider>
       <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa' }}>
@@ -337,16 +336,14 @@ function App() {
             ].map((stat, i) => (
               <Paper key={i} shadow="xs" p="lg" style={{ border: '1px solid #dee2e6' }}>
                 <Text size="xs" c="#868e96" tt="uppercase" fw={500} mb="xs">{stat.label}</Text>
-                <Text size="32px" fw={700}>{stat.value}</Text>
+                <Text size="32px" fw={700} ta="right">{stat.value}</Text>
               </Paper>
             ))}
           </div>
 
           {/* Reports Table */}
           <Paper shadow="xs" style={{ overflow: 'hidden', border: '1px solid #dee2e6' }}>
-            <div style={{ padding: '20px 20px 16px 20px' }}>
-            </div>
-            <Table>
+            <Table highlightOnHover>
               <Table.Thead style={{ backgroundColor: '#f8f9fa' }}>
                 <Table.Tr>
                   <Table.Th style={{ padding: '16px 20px', fontSize: '12px', color: '#868e96', textTransform: 'uppercase', fontWeight: 600, textAlign: 'left', paddingLeft: '30px' }}>Название отчёта</Table.Th>
